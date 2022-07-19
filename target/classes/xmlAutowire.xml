@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.spring.core.AutoWiring.Xml.Passport"
+		name="passport">
+		<property name="passNum" value="78435" />
+		<property name="country" value="India" />
+
+	</bean>
+	<bean class="com.spring.core.AutoWiring.Xml.Address" name="address">
+		<property name="city" value="Mumbai" />
+		<property name="state" value="Maha" />
+	</bean>
+	
+<!-- 	
+	demo for autowire byName
+	<bean class="com.spring.core.AutoWiring.Xml.Employee" name="emp1"
+		autowire="byName">
+		<property name="empId" value="34" />
+		<property name="empName" value="Morphius" />
+	</bean>
+ -->	
+	
+	<!-- demo for autowire byType -->
+	<bean class="com.spring.core.AutoWiring.Xml.Employee" name="emp1"
+		autowire="byType">
+		<property name="empId" value="34" />
+		<property name="empName" value="Morphius" />
+		<property name="address" ref="address" />
+	</bean>
+
+</beans>

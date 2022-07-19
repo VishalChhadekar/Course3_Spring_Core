@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.spring.core.SIandCI_demo.MemberShip"
+		name="membership">
+		<constructor-arg value="671" />
+		<constructor-arg value="Premium" />
+		<constructor-arg value="7" />
+	</bean>
+
+	<bean class="com.spring.core.SIandCI_demo.Customer"
+		name="customer1">
+		<property name="custId" value="12"/>
+		<property name="custName" value="Lucifer"/>
+		<property name="emailId" value="king@hell"/>
+		<property name="contacNo" value="7898234418"/>
+		<property name="membership" ref="membership"/>
+	</bean>
+
+</beans>
