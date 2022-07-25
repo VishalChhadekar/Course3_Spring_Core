@@ -8,7 +8,7 @@ public class Employee {
 	private int empId;
 	private String empName;
 
-	@Autowired
+	@Autowired 
 	private Passport passprot;
 
 	public int getEmpId() {

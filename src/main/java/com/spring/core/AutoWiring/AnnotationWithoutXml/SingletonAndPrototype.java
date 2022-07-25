@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 //instead of creating a xml file, we can create a java class which will handle all the configurations
 //to make it so, we have to Annotated it with @Configuration
 @ComponentScan
-public class ConfigClass {
+public class SingletonAndPrototype {
 
 	@Bean
 	public Student getStudent() {
